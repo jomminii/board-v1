@@ -5,3 +5,8 @@ Content-Type: application/json
 {
   "test": "test"
 }
+
+###
+GET {{host}}/api/v1/boards
+Content-Type: application/json
+
