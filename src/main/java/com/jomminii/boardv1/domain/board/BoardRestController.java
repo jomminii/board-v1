@@ -1,7 +1,9 @@
 package com.jomminii.boardv1.domain.board;
 
 import com.jomminii.boardv1.common.ResultDTO;
-import org.springframework.web.bind.annotation.ExceptionHandler;
+import com.jomminii.boardv1.common.ErrorMessages;
+import com.jomminii.boardv1.common.ResultCode.Common;
+import com.jomminii.boardv1.common.ServiceException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,12 +22,9 @@ public class BoardRestController {
     }
 
     @GetMapping("")
-    public ResultDTO<Object> exceptionTest() throws Exception {
-        throw new Exception("error test");
+    public ResultDTO<Object> exceptionTest() {
+        ServiceException.throwServiceException(Common.INVALID_REQUEST, ErrorMessages.Common.INVALID_REQUEST, "15");
+        return ResultDTO.ofFail("실패!!");
     }
 
-    @ExceptionHandler(Exception.class)
-    public ResultDTO<Object> handlerException(Exception exception) {
-        return ResultDTO.ofFail("이게 먼저다!");
-    }
 }

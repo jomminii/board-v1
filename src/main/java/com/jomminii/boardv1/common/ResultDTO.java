@@ -25,4 +25,8 @@ public class ResultDTO<D> {
     public static <D> ResultDTO<D> ofFail(String message) {
         return new ResultDTO<>("FAIL", message, null);
     }
+
+    public static <D> ResultDTO<D> of(ResultCode resultCode, String message) {
+        return new ResultDTO<>(resultCode.getResultCodeName(), message, null);
+    }
 }
