@@ -18,5 +18,4 @@ public interface ResultCode {
             return this.name();
         }
     }
-
 }

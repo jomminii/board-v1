@@ -1,5 +1,8 @@
 package com.jomminii.boardv1.common.handler;
 
+import com.jomminii.boardv1.common.ErrorMessages;
+import com.jomminii.boardv1.common.ResultCode;
+import com.jomminii.boardv1.common.ResultCode.Common;
 import com.jomminii.boardv1.common.ResultDTO;
 import com.jomminii.boardv1.common.ServiceException;
 import org.springframework.web.bind.annotation.ExceptionHandler;

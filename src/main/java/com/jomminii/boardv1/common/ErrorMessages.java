@@ -5,9 +5,9 @@ import lombok.RequiredArgsConstructor;
 
 public interface ErrorMessages {
 
-    String getMessage(Object... args);
+    String getMessage(String... args);
 
-    default String buildFormattedMessage(String message, Object... args) {
+    default String buildFormattedMessage(String message, String... args) {
         return MessageFormat.format(message, args);
     }
 
@@ -19,7 +19,7 @@ public interface ErrorMessages {
         private final String message;
 
         @Override
-        public String getMessage(Object... args) {
+        public String getMessage(String... args) {
             return buildFormattedMessage(this.message, args);
         }
     }
